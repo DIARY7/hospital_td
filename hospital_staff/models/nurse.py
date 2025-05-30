@@ -6,9 +6,10 @@ from odoo import models, fields, api
 class Nurse(models.Model):
     _name = 'hospital.staff.nurse'
     _description = "Information sur une infirmiere"
+    _inherit = 'res.partner'
 
-    name = fields.Char()
     date_of_birth = fields.Date(string='Date of Birth')
+    user_id = fields.Many2one('res.users')
 
 
 
