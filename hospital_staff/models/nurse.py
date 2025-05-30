@@ -8,7 +8,6 @@ class Nurse(models.Model):
     _description = "Information sur une infirmiere"
     _inherit = 'res.partner'
 
-    date_of_birth = fields.Date(string='Date of Birth')
     user_id = fields.Many2one('res.users')
 
 

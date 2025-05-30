@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ========== SYMPTOMS MASTER DATA ========== -->
+    <record id="symptom_fever" model="hospital.disease.symptom">
+        <field name="name">Fever</field>
+        <field name="severity">3.0</field>
+    </record>
+
+    <record id="symptom_cough" model="hospital.disease.symptom">
+        <field name="name">Cough</field>
+        <field name="severity">2.5</field>
+    </record>
+
+    <record id="symptom_headache" model="hospital.disease.symptom">
+        <field name="name">Headache</field>
+        <field name="severity">2.0</field>
+    </record>
+
+    <record id="symptom_fatigue" model="hospital.disease.symptom">
+        <field name="name">Fatigue</field>
+        <field name="severity">2.8</field>
+    </record>
+
+    <record id="symptom_nausea" model="hospital.disease.symptom">
+        <field name="name">Nausea</field>
+        <field name="severity">2.3</field>
+    </record>
+
+    <record id="symptom_rash" model="hospital.disease.symptom">
+        <field name="name">Skin Rash</field>
+        <field name="severity">1.8</field>
+    </record>
+
+    <!-- ========== DISEASE TYPES MASTER DATA ========== -->
+    <record id="type_infectious" model="hospital.disease.type">
+        <field name="name">Infectious Disease</field>
+        <field name="is_prescription">True</field>
+        <field name="advice">Requires antibiotic treatment under medical supervision. Isolate patient if contagious.</field>
+    </record>
+
+    <record id="type_chronic" model="hospital.disease.type">
+        <field name="name">Chronic Condition</field>
+        <field name="is_prescription">True</field>
+        <field name="advice">Long-term management required. Regular check-ups recommended.</field>
+    </record>
+
+    <record id="type_genetic" model="hospital.disease.type">
+        <field name="name">Genetic Disorder</field>
+        <field name="is_prescription">False</field>
+        <field name="advice">Genetic counseling recommended. Symptomatic treatment available.</field>
+    </record>
+
+    <record id="type_autoimmune" model="hospital.disease.type">
+        <field name="name">Autoimmune Disease</field>
+        <field name="is_prescription">True</field>
+        <field name="advice">Immunosuppressants often required. Monitor for infections.</field>
+    </record>
+</odoo>

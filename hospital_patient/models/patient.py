@@ -9,7 +9,11 @@ class Patient(models.Model):
     date_of_birth = fields.Date(string='Date of Birth')
     user_id = fields.Many2one('res.users', string='User')
     hospital_id = fields.Many2one('hospital.hospital', string='Hospital')
-
+    state = fields.Selection([
+        ('in_remission', "In remission"),
+        ('in_treatment', "In treatment"),
+        ('free_to_go', "Free to go"),
+    ], string="State", default='in_remission', required=True)
     
 
 

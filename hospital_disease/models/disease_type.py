@@ -8,5 +8,5 @@ class DiseaseType(models.Model):
 
     name = fields.Char("Name type")
     is_prescription = fields.Boolean("Is prescription") # Misy type de maladie ne necessite pas de prescription
-
+    advice = fields.Text("Advice")
 

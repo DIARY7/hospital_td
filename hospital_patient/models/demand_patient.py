@@ -8,8 +8,7 @@ class Demand(models.Model):
 
     date_of_demand = fields.Date(string='Date of demand')
     patient_id = fields.Many2one('hospital.patient', string='Patient')
-    doctor_id = fields.Many2one('hospital.staff.doctor', string='Hospital')
-
+    symptom_ids = fields.Many2many("hospital.disease.symptom", string='Symptoms', relation="demand_symptom_rel")
 
 
 

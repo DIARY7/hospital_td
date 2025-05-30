@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hospital_disease_hospital_disease,hospital_disease.hospital_disease,model_hospital_disease_hospital_disease,base.group_user,1,1,1,1
+access_hospital_disease_admin,hospital.disease.admin,model_hospital_disease,base.group_system,1,1,1,1
+access_hospital_disease_type_admin,hospital.disease.type.admin,model_hospital_disease_type,base.group_system,1,1,1,1
+access_hospital_disease_symptom_admin,hospital.disease.symptom.admin,model_hospital_disease_symptom,base.group_system,1,1,1,1
