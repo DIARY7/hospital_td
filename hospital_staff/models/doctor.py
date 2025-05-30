@@ -2,8 +2,8 @@
 
 from odoo import models, fields, api
 
-class Medecin(models.Model):
-    _name = 'hospital.medecin'
+class Doctor(models.Model):
+    _name = 'hospital.staff.doctor'
     _description = "Information sur un Medecin"
 
     name = fields.Char()

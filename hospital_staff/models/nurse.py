@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class Nurse(models.Model):
-    _name = 'hospital.nurse'
+    _name = 'hospital.staff.nurse'
     _description = "Information sur une infirmiere"
 
     name = fields.Char()
