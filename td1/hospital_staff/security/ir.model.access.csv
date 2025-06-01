@@ -1,1 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hospital_staff_nurse,hospital_staff.nurse,model_hospital_staff_nurse,group_hospital_nurse,1,1,1,1
+access_hospital_staff_nurse1,hospital_staff.nurse1,model_hospital_staff_doctor,group_hospital_nurse,1,1,1,1
+access_hospital_staff_doctor,hospital_staff.doctor,model_hospital_staff_doctor,group_hospital_doctor,1,1,1,1
+

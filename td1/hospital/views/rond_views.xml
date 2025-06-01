@@ -35,59 +35,30 @@
     </record>
 
     <!-- Vue Formulaire Ronde -->
-<!--    <record id="view_rond_form" model="ir.ui.view">-->
-<!--        <field name="name">rond.form</field>-->
-<!--        <field name="model">hospital.rond</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <form string="Fiche Ronde Infirmière">-->
-<!--                <header>-->
-<!--                    <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done,cancelled"/>-->
-<!--                </header>-->
-<!--                <sheet>-->
-<!--                    <div class="oe_title">-->
-<!--                        <h1>-->
-<!--                            <field name="name" placeholder="Nom de la ronde (automatique)"/>-->
-<!--                        </h1>-->
-<!--                    </div>-->
-
-<!--                    <group>-->
-<!--                        <group>-->
-<!--                            <field name="date_of_rond" required="1"/>-->
-<!--                            <field name="nurse_id" required="1"/>-->
-<!--                        </group>-->
-<!--&lt;!&ndash;                        <group>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <field name="shift" widget="radio" options="{'horizontal': true}"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <field name="duration" widget="float_time"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </group>&ndash;&gt;-->
-<!--                    </group>-->
-
-<!--                    <field name="line_rond_ids">-->
-<!--                        <list editable="bottom" create="1" delete="1">-->
-<!--                            <field name="patient_id" required="1"/>-->
-<!--                            <field name="date_of_rond" string="Date and time"/>-->
-<!--                            <field name="patient_id.state" widget="selection_badge"/>-->
-<!--                            <field name="observations" string="Observations"/>-->
-<!--                        </list>-->
-<!--                        <form>-->
-<!--                            <group>-->
-<!--                                <group>-->
-<!--                                    <field name="patient_id"/>-->
-<!--                                    <field name="date_of_rond"/>-->
-<!--                                </group>-->
-<!--                                <group>-->
-<!--                                    <field name="status"/>-->
-<!--                                    <field name="description"/>-->
-<!--                                </group>-->
-<!--                            </group>-->
-<!--                            <group>-->
-<!--                                <field name="observations"/>-->
-<!--                            </group>-->
-<!--                        </form>-->
-<!--                    </field>-->
-<!--                </sheet>-->
-<!--            </form>-->
-<!--        </field>-->
-<!--    </record>-->
+<record id="view_form_hospital_rond" model="ir.ui.view">
+        <field name="name">hospital.rond.form</field>
+        <field name="model">hospital.rond</field>
+        <field name="arch" type="xml">
+            <form string="Nurse Rond">
+                <sheet>
+                    <group>
+                        <field name="date_of_rond"/>
+                        <field name="nurse_id" readonly="1" string="Nurse connect" style="color: blue; font-weight: bold; font-size:30px" options="{'no_open': True}"/>
+                    </group>
+                    <notebook>
+                        <page string="Patients visited">
+                            <field name="line_rond_ids">
+                                <list editable="bottom">
+                                    <field name="patient_id"/>
+                                    <field name="description"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
     <!-- Action pour ouvrir la vue -->
     <record id="action_rond" model="ir.actions.act_window">
