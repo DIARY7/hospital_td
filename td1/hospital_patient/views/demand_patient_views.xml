@@ -5,10 +5,11 @@
         <field name="model">hospital.demand.patient</field>
         <field name="arch" type="xml">
             <form string="Patient Demand">
+
                 <sheet>
                     <group>
+                        <field name="patient_id" string="Patient connect " options="{'no_open': True}" readonly="1" style="color: blue; font-weight: bold; font-size:30px"/>
                         <field name="date_of_demand"/>
-                        <field name="patient_id"/>
                         <field name="symptom_ids" widget="many2many_tags"/>
                     </group>
                 </sheet>
