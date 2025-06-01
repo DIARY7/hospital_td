@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vue Liste -->
+    <record id="view_consultation_list" model="ir.ui.view">
+        <field name="name">consultation.list</field>
+        <field name="model">hospital.consultation</field>
+        <field name="arch" type="xml">
+            <list string="Liste des consultations">
+                <field name="date_consultation"/>
+                <field name="doctor_id"/>
+                <field name="demand_patient_id" widget="many2one_clickable"/>
+<!--                <field name="state" widget="statusbar" clickable="1"/>-->
+            </list>
+        </field>
+    </record>
+
+    <!-- Vue Formulaire -->
+    <record id="view_consultation_form" model="ir.ui.view">
+        <field name="name">consultation.form</field>
+        <field name="model">hospital.consultation</field>
+        <field name="arch" type="xml">
+            <form string="Fiche Consultation">
+<!--                <header>-->
+<!--                    <field name="demand_patient_id" widget="statusbar" statusbar_visible="draft,confirmed,done,cancelled"/>-->
+<!--                </header>-->
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="date_consultation" required="1"/>
+                            <field name="doctor_id" required="1"/>
+                        </group>
+                        <group>
+                            <field name="demand_patient_id" required="1"/>
+                        </group>
+                    </group>
+
+<!--                    <notebook>-->
+<!--                        <page string="Détails">-->
+<!--                            <field name="notes" placeholder="Notes médicales..."/>-->
+<!--                        </page>-->
+<!--&lt;!&ndash;                        <page string="Prescription" attrs="{'invisible': [('state','=','draft')]}">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <field name="prescription_ids">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <list editable="bottom">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <field name="product_id"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <field name="quantity"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <field name="dosage"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <field name="duration"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </list>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </field>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </page>&ndash;&gt;-->
+<!--                        <page string="Historique">-->
+<!--                            <field name="message_ids" widget="mail_thread"/>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+                </sheet>
+<!--                <div class="oe_chatter">-->
+<!--                    <field name="message_follower_ids" widget="mail_followers"/>-->
+<!--                    <field name="activity_ids" widget="mail_activity"/>-->
+<!--                    <field name="message_ids" widget="mail_thread"/>-->
+<!--                </div>-->
+            </form>
+        </field>
+    </record>
+
+    <!-- Action pour ouvrir la vue -->
+    <record id="action_consultation" model="ir.actions.act_window">
+        <field name="name">Consultations</field>
+        <field name="res_model">hospital.consultation</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Créer votre première consultation !
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_consultation_root" name="Consultations" sequence="20"/>
+    <menuitem id="menu_consultation" name="Gestion des Consultations" parent="menu_consultation_root" action="action_consultation" sequence="1"/>
+
+</odoo>

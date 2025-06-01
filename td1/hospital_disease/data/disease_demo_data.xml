@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ========== DEMO DISEASES ========== -->
+    <record id="disease_influenza" model="hospital.disease">
+        <field name="name">Influenza (Flu)</field>
+        <field name="disease_type_id" ref="type_infectious"/>
+        <field name="symptom_ids" eval="[(6, 0, [ref('symptom_fever'), ref('symptom_cough'), ref('symptom_fatigue'), ref('symptom_headache')])]"/>
+    </record>
+
+    <record id="disease_asthma" model="hospital.disease">
+        <field name="name">Bronchial Asthma</field>
+        <field name="disease_type_id" ref="type_chronic"/>
+        <field name="symptom_ids" eval="[(6, 0, [ref('symptom_cough')])]"/>
+    </record>
+
+    <record id="disease_lupus" model="hospital.disease">
+        <field name="name">Systemic Lupus Erythematosus</field>
+        <field name="disease_type_id" ref="type_autoimmune"/>
+        <field name="symptom_ids" eval="[(6, 0, [ref('symptom_fatigue'), ref('symptom_rash'), ref('symptom_fever')])]"/>
+    </record>
+
+    <record id="disease_covid" model="hospital.disease">
+        <field name="name">COVID-19</field>
+        <field name="disease_type_id" ref="type_infectious"/>
+        <field name="symptom_ids" eval="[(6, 0, [ref('symptom_fever'), ref('symptom_cough'), ref('symptom_fatigue'), ref('symptom_nausea')])]"/>
+    </record>
+
+    <record id="disease_migraine" model="hospital.disease">
+        <field name="name">Chronic Migraine</field>
+        <field name="disease_type_id" ref="type_chronic"/>
+        <field name="symptom_ids" eval="[(6, 0, [ref('symptom_headache'), ref('symptom_nausea')])]"/>
+    </record>
+
+    <record id="disease_eczema" model="hospital.disease">
+        <field name="name">Atopic Eczema</field>
+        <field name="disease_type_id" ref="type_genetic"/>
+        <field name="symptom_ids" eval="[(6, 0, [ref('symptom_rash')])]"/>
+    </record>
+
+    <record id="disease_food_poisoning" model="hospital.disease">
+        <field name="name">Food Poisoning</field>
+        <field name="disease_type_id" ref="type_infectious"/>
+        <field name="symptom_ids" eval="[(6, 0, [ref('symptom_nausea'), ref('symptom_fatigue')])]"/>
+    </record>
+</odoo>

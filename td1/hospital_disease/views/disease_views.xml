@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Vue Recherche -->
+    <record id="view_disease_search" model="ir.ui.view">
+        <field name="name">disease.search</field>
+        <field name="model">hospital.disease</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Nom de la maladie"/>
+                <filter name="filter_prescription" string="Nécessite prescription" 
+                        domain="[('disease_type_id.is_prescription','=',True)]"/>
+                <separator/>
+                <filter name="group_by_type" string="Group by Type" context="{'group_by':'disease_type_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Vue Liste -->
+    <record id="view_disease_list" model="ir.ui.view">
+        <field name="name">disease.list</field>
+        <field name="model">hospital.disease</field>
+        <field name="arch" type="xml">
+            <list string="Liste des maladies">
+                <field name="name"/>
+                <field name="disease_type_id"/>
+                <field name="severity_disease" widget="progressbar" options="{'current_value': 'severity_disease', 'max_value': 100}"/>
+                <field name="symptom_ids" widget="many2many_tags"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vue Formulaire -->
+    <record id="view_disease_form" model="ir.ui.view">
+        <field name="name">disease.form</field>
+        <field name="model">hospital.disease</field>
+        <field name="arch" type="xml">
+            <form string="Fiche Maladie">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="disease_type_id" required="1"/>
+                            <field name="severity_disease" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="symptom_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Symptômes">
+                            <field name="symptom_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="severity" widget="progressbar" options="{'current_value': 'severity', 'max_value': 10}"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action pour ouvrir la vue -->
+    <record id="action_disease" model="ir.actions.act_window">
+        <field name="name">Diseases</field>
+        <field name="res_model">hospital.disease</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Créer votre première fiche maladie !
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_disease_root" name="Gestion Médicale" sequence="10"/>
+    <menuitem id="menu_disease" name="Maladies" parent="menu_disease_root" action="action_disease" sequence="1"/>
+
+</odoo>
