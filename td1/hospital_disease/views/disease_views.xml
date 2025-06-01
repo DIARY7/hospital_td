@@ -57,11 +57,6 @@
                                 </list>
                             </field>
                         </page>
-                        <page string="Conseils Médicaux" attrs="{'invisible': [('disease_type_id.is_prescription','=',False)]}">
-                            <field name="disease_type_id" readonly="1">
-                                <field name="advice" readonly="0"/>
-                            </field>
-                        </page>
                     </notebook>
                 </sheet>
             </form>

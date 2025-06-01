@@ -10,17 +10,23 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': [
+        'base',
+        'hospital_disease',
+        'hospital_patient',
+        'hospital_staff'
+    ],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/consultation_views.xml',
+        'views/rond_views.xml',
+        # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        # 'demo/demo.xml',
     ],
 
     'installable': True,

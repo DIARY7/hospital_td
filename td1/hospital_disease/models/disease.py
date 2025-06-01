@@ -10,7 +10,7 @@ class Disease(models.Model):
     symptom_ids = fields.Many2many("hospital.disease.symptom",string='Symptoms',relation="disease_symptom_rel")
     severity_disease =fields.Float(string='Severity' , compute='_compute_severity',store=True)
 
-    @api.depends("disease_symptom_ids.severity")
+    @api.depends("symptom_ids.severity")
     def _compute_severity(self):
         for disease in self:
             disease.severity_disease = sum(disease.symptom_ids.mapped('severity'))
