@@ -75,7 +75,7 @@
     </record>
 
     <!-- Menu -->
-    <menuitem id="menu_consultation_root" name="Consultations" sequence="20"/>
+    <menuitem id="menu_consultation_root" name="Consultations" parent="menu_hospital_root" sequence="20"/>
     <menuitem id="menu_consultation" name="Gestion des Consultations" parent="menu_consultation_root" action="action_consultation" sequence="1"/>
 
 </odoo>

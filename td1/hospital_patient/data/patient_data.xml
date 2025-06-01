@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <!-- 2. Utilisateurs -->
+    <record id="user_patient_alice" model="res.users">
+        <field name="name">Alice Demo</field>
+        <field name="login">alice.patient</field>
+        <field name="email">alice.patient@example.com</field>
+        <field name="password">hospital123</field>
+        <field name="groups_id" eval="[(6, 0, [ref('group_hospital_patient')])]"/>
+    </record>
+
+    <record id="user_patient_bob" model="res.users">
+        <field name="name">Bob Demo</field>
+        <field name="login">bob.patient</field>
+        <field name="email">bob.patient@example.com</field>
+        <field name="password">hospital123</field>
+        <field name="groups_id" eval="[(6, 0, [ref('group_hospital_patient')])]"/>
+    </record>
+
+    <record id="user_patient_carla" model="res.users">
+        <field name="name">Carla Smile</field>
+        <field name="login">carla.patient</field>
+        <field name="email">carla.patient@example.com</field>
+        <field name="password">hospital123</field>
+        <field name="groups_id" eval="[(6, 0, [ref('group_hospital_patient')])]"/>
+    </record>
+
+    <record id="user_patient_david" model="res.users">
+        <field name="name">David Strong</field>
+        <field name="login">david.patient</field>
+        <field name="email">david.patient@example.com</field>
+        <field name="password">hospital123</field>
+        <field name="groups_id" eval="[(6, 0, [ref('group_hospital_patient')])]"/>
+    </record>
+
+    <!-- 3. Partners -->
+    <record id="partner_alice" model="res.partner">
+        <field name="name">Alice Demo</field>
+        <field name="email">alice.patient@example.com</field>
+    </record>
+
+    <record id="partner_bob" model="res.partner">
+        <field name="name">Bob Demo</field>
+        <field name="email">bob.patient@example.com</field>
+    </record>
+
+    <record id="partner_carla" model="res.partner">
+        <field name="name">Carla Smile</field>
+        <field name="email">carla.patient@example.com</field>
+    </record>
+
+    <record id="partner_david" model="res.partner">
+        <field name="name">David Strong</field>
+        <field name="email">david.patient@example.com</field>
+    </record>
+
+    <!-- 4. Patients -->
+    <record id="patient_alice" model="hospital.patient">
+        <field name="partner_id" ref="partner_alice"/>
+        <field name="date_of_birth">1995-06-15</field>
+        <field name="user_id" ref="user_patient_alice"/>
+        <field name="state">free_to_go</field>
+    </record>
+
+    <record id="patient_bob" model="hospital.patient">
+        <field name="partner_id" ref="partner_bob"/>
+        <field name="date_of_birth">1988-01-09</field>
+        <field name="user_id" ref="user_patient_bob"/>
+        <field name="state">in_treatment</field>
+    </record>
+
+    <record id="patient_carla" model="hospital.patient">
+        <field name="partner_id" ref="partner_carla"/>
+        <field name="date_of_birth">2000-11-03</field>
+        <field name="user_id" ref="user_patient_carla"/>
+        <field name="state">in_remission</field>
+    </record>
+
+    <record id="patient_david" model="hospital.patient">
+        <field name="partner_id" ref="partner_david"/>
+        <field name="date_of_birth">1978-02-27</field>
+        <field name="user_id" ref="user_patient_david"/>
+        <field name="state">in_treatment</field>
+    </record>
+</odoo>

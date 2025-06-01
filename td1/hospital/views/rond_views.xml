@@ -102,7 +102,7 @@
     </record>
 
     <!-- Menu -->
-    <menuitem id="menu_rond_root" name="Rondes" sequence="30"/>
+    <menuitem id="menu_rond_root" name="Rondes" parent="menu_hospital_root" sequence="30"/>
     <menuitem id="menu_rond" name="Gestion des Rondes" parent="menu_rond_root" action="action_rond" sequence="1"/>
 
 </odoo>
