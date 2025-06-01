@@ -11,7 +11,7 @@
         <record id="group_hospital_doctor" model="res.groups">
             <field name="name">Doctor</field>
             <field name="category_id" ref="module_category_hospital"/>
-            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="implied_ids" eval="[(4, ref0('base.group_user'))]"/>
         </record>
 
         <!-- Groupe pour les infirmières -->

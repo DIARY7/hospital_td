@@ -13,12 +13,15 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','contacts'],
+    'depends': ['base','contacts','hospital_staff','hospital_disease'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        # 'views/views.xml',
+        'views/patient_views.xml',
+        'data/security.xml',
+        'data/patient_data.xml',
+        'views/demand_patient_views.xml',
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode

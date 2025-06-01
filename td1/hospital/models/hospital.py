@@ -8,6 +8,6 @@ class Hospital(models.Model):
 
     name = fields.Char(string='Nom')
     address = fields.Char(string = "Address")
-    patients_id = fields.One2many('hospital.patient', 'hospital_id')
+    # patients_id = fields.One2many('hospital.patient', 'hospital_id')
 
 

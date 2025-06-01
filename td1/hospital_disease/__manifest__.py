@@ -16,7 +16,7 @@
     # always loaded
     'data': [
         'data/disease_master_data.xml',
-        'data/disease_master_data.xml',
+        'data/disease_demo_data.xml',
         'security/ir.model.access.csv',
         'views/disease_views.xml',
         # 'views/views.xml',

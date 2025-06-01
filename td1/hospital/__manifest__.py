@@ -20,6 +20,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/menu_hospital_views.xml',
         'views/consultation_views.xml',
         'views/rond_views.xml',
         # 'views/templates.xml',

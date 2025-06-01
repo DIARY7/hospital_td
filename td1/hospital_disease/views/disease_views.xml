@@ -76,7 +76,7 @@
     </record>
 
     <!-- Menu -->
-    <menuitem id="menu_disease_root" name="Gestion Médicale" sequence="10"/>
+    <menuitem id="menu_disease_root" name="Hospital Disease" sequence="10"/>
     <menuitem id="menu_disease" name="Maladies" parent="menu_disease_root" action="action_disease" sequence="1"/>
 
 </odoo>
