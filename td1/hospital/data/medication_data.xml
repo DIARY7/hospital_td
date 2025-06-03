@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="product_med_paracetamol" model="product.product">
+        <field name="name">Paracétamol 500mg</field>
+        <field name="default_code">MED001</field>
+        <field name="type">product</field>
+        <field name="list_price">2.50</field>
+        <field name="standard_price">1.00</field>
+    </record>
+
+    <record id="product_med_ibuprofen" model="product.product">
+        <field name="name">Ibuprofène 400mg</field>
+        <field name="default_code">MED002</field>
+        <field name="type">product</field>
+        <field name="list_price">3.00</field>
+        <field name="standard_price">1.20</field>
+    </record>
+
+    <record id="product_med_amoxicillin" model="product.product">
+        <field name="name">Amoxicilline 1g</field>
+        <field name="default_code">MED003</field>
+        <field name="type">product</field>
+        <field name="list_price">4.50</field>
+        <field name="standard_price">2.00</field>
+    </record>
+</odoo>

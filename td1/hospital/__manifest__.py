@@ -22,6 +22,7 @@
         'security/ir.model.access.csv',
         'security/rond_rules.xml',
         'report/rond_pdf.xml',
+        'data/medication_data.xml',
         'report/report.xml',
         'views/menu_hospital_views.xml',
         'views/consultation_views.xml',
