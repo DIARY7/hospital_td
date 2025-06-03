@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_week_rondes" model="ir.actions.report">
+        <field name="name">Rapport des rondes hebdomadaires</field>
+        <field name="model">hospital.rond</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hospital.report_week_rondes_pdf</field>
+        <field name="report_file">hospital.report_week_rondes_pdf</field>
+        <field name="print_report_name">'Rondes du %s' % (object.date_of_rond)</field>
+        <field name="binding_model_id" ref="model_hospital_rond"/>
+    </record>
+</odoo>

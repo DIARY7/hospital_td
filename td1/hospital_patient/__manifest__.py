@@ -17,10 +17,11 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
-        'views/patient_views.xml',
         'data/security.xml',
         'data/patient_data.xml',
+        'security/ir.model.access.csv',
+        'security/demand_patient_rules.xml',
+        'views/patient_views.xml',
         'views/demand_patient_views.xml',
         # 'views/templates.xml',
     ],

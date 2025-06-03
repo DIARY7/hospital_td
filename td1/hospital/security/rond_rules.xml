@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hospital_rond_nurse_rule" model="ir.rule">
+        <field name="name">Rondes visibles par l'infirmier assigné</field>
+        <field name="model_id" ref="hospital.model_hospital_rond"/>  <!-- Remplace module_name par le nom technique de ton module -->
+        <field name="domain_force">[('nurse_id.user_id.id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>  <!-- Peut être limité à un groupe spécifique si tu veux -->
+    </record>
+</odoo>
+

@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Vue Recherche Ronde -->
-<!--    <record id="view_rond_search" model="ir.ui.view">-->
-<!--        <field name="name">rond.search</field>-->
-<!--        <field name="model">hospital.rond</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <search>-->
-<!--                <field name="date_of_rond" string="Date de ronde"/>-->
-<!--                <field name="nurse_id" string="Infirmière"/>-->
-<!--                <filter name="filter_today" string="Aujourd'hui" domain="[('date_of_rond','=',current_date)]"/>-->
-<!--                <filter name="filter_this_week" string="Cette semaine" domain="[('date_of_rond','>=',start_of_week), ('date_of_rond','<=',end_of_week)]"/>-->
-<!--                <group expand="0" string="Group By">-->
-<!--                    <filter name="group_by_nurse" string="Par infirmière" context="{'group_by':'nurse_id'}"/>-->
-<!--                    <filter name="group_by_date" string="Par date" context="{'group_by':'date_of_rond'}"/>-->
-<!--                </group>-->
-<!--            </search>-->
-<!--        </field>-->
-<!--    </record>-->
-
     <!-- Vue Liste Ronde -->
     <record id="view_rond_list" model="ir.ui.view">
         <field name="name">rond.list</field>
@@ -35,7 +17,7 @@
     </record>
 
     <!-- Vue Formulaire Ronde -->
-<record id="view_form_hospital_rond" model="ir.ui.view">
+    <record id="view_form_hospital_rond" model="ir.ui.view">
         <field name="name">hospital.rond.form</field>
         <field name="model">hospital.rond</field>
         <field name="arch" type="xml">
@@ -72,8 +54,18 @@
         </field>
     </record>
 
+    <!--    Pour le template-->
+    <record id="action_week_rondes_webpage" model="ir.actions.act_url">
+        <field name="name">Voir mes rondes (web)</field>
+        <field name="url">/hospital/my-week-rondes</field>
+        <field name="target">new</field>
+    </record>
+
     <!-- Menu -->
     <menuitem id="menu_rond_root" name="Rondes" parent="menu_hospital_root" sequence="30"/>
     <menuitem id="menu_rond" name="Gestion des Rondes" parent="menu_rond_root" action="action_rond" sequence="1"/>
+    <menuitem id="menu_week_rondes_web" name="Voir mes rondes" parent="menu_hospital_root" groups="hospital_staff.group_hospital_nurse"
+          action="action_week_rondes_webpage" sequence="99"/>
+
 
 </odoo>

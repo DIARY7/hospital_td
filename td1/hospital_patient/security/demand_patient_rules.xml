@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="0">
+        <record id="hospital_demand_rule_patient" model="ir.rule">
+            <field name="name">Voir uniquement ses propres demandes</field>
+            <field name="model_id" ref="hospital_patient.model_hospital_demand_patient"/>
+            <field name="domain_force">[('patient_id.user_id.id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('group_hospital_patient'))]"/>
+        </record>
+    </data>
+</odoo>

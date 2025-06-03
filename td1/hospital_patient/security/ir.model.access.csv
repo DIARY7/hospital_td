@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hospital_patient_patient,hospital_patient.patient,model_hospital_patient,base.group_system,1,0,1,1
 access_hospital_patient_patient_2,hospital_patient.patient.2,model_hospital_patient,group_hospital_patient,1,0,0,0
-access_hospital_patient_patient_2,hospital_patient.patient.2,model_hospital_patient,hospital_staff.group_hospital_nurse,1,0,0,0
+access_hospital_patient_patient_3,hospital_patient.patient.3,model_hospital_patient,hospital_staff.group_hospital_nurse,1,1,0,0
 access_hospital_patient_demand_patient,hospital_patient.demand.patient,model_hospital_demand_patient,group_hospital_patient,1,1,1,1
 
