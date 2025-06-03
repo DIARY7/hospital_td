@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <template id="template_week_rondes">
+    <t t-name="hospital.template_week_rondes">
+      <t t-call="web.basic_layout">
+        <div class="container my-5">
+          <h2>Rondes de <t t-esc="nurse.name"/> (semaine du <t t-esc="start"/> au <t t-esc="end"/>)</h2>
+
+          <!-- Bouton Export PDF -->
+          <a t-att-href="'/hospital/my-week-rondes/pdf?start=' + start + '&amp;end=' + end"
+             class="btn btn-primary mb-3"
+             target="_blank">
+              Export in PDF
+          </a>
+
+          <t t-if="rondes">
+            <table class="table table-hover mt-3">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Patients</th>
+                </tr>
+              </thead>
+              <tbody>
+                <t t-foreach="rondes" t-as="r">
+                  <tr>
+                    <td><t t-esc="r.date_of_rond"/></td>
+                    <td>
+                      <ul>
+                        <t t-foreach="r.line_rond_ids" t-as="line">
+                          <li>
+                            <t t-esc="line.patient_id.name"/> :
+                            <t t-esc="line.description"/>
+                          </li>
+                        </t>
+                      </ul>
+                    </td>
+                  </tr>
+                </t>
+              </tbody>
+            </table>
+          </t>
+          <t t-else="">
+            <p>Aucune ronde cette semaine.</p>
+          </t>
+        </div>
+      </t>
+    </t>
+  </template>
+
+  <!-- Template affiché si aucun nurse lié -->
+  <template id="no_nurse">
+    <t t-name="hospital.no_nurse">
+      <t t-call="website.layout">
+        <div class="container mt-5">
+          <h2>Erreur</h2>
+          <p>Vous n'êtes pas lié à une infirmière. Contactez votre administrateur.</p>
+        </div>
+      </t>
+    </t>
+  </template>
+
+<!--  <template id="menu_link_to_week_rondes" inherit_id="website.main_menu">-->
+<!--  <xpath expr="//nav//ul" position="inside">-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" href="/hospital/my-week-rondes">Mes rondes</a>-->
+<!--    </li>-->
+<!--  </xpath>-->
+<!--</template>-->
+
+
+
+</odoo>

@@ -20,9 +20,14 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/rond_rules.xml',
+        'report/rond_pdf.xml',
+        'data/medication_data.xml',
+        'report/report.xml',
         'views/menu_hospital_views.xml',
         'views/consultation_views.xml',
         'views/rond_views.xml',
+        'views/rond_week_views.xml',
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
