@@ -1,6 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hospital_consultation_doctor,hospital.consultation.doctor,model_hospital_consultation,hospital_staff.group_hospital_doctor,1,1,1,1
-access_hospital_medication_doctor,hospital.medication.doctor,model_product_product,hospital_staff.group_hospital_doctor,1,1,1,1
 access_hospital_medication_doctor,hospital.medication.doctor,model_hospital_fiche_patient,hospital_staff.group_hospital_doctor,1,1,1,1
 access_hospital_consultation_nurse,hospital.consultation.nurse,model_hospital_consultation,hospital_staff.group_hospital_nurse,1,1,1,1
 access_hospital_consultation_nurse,hospital.consultation.nurse,model_hospital_consultation,hospital_staff.group_hospital_nurse,1,1,1,1
